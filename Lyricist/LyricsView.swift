@@ -6,10 +6,10 @@
 //
 
 import SwiftUI
-import MelonLyrics
+import LyricsKit
 
 struct LyricsView: View {
-    @StateObject private var service = MelonLyrics()
+    @StateObject private var service = LyricsKit()
     @State var artist: String?
     @State var title: String? 
     

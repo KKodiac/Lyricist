@@ -11,8 +11,8 @@
 		0B80B37329F10A02003066FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B80B37229F10A02003066FF /* ContentView.swift */; };
 		0B80B37529F10A04003066FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B80B37429F10A04003066FF /* Assets.xcassets */; };
 		0B80B37829F10A04003066FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B80B37729F10A04003066FF /* Preview Assets.xcassets */; };
-		0B80B38A29F10FE1003066FF /* MelonLyrics in Frameworks */ = {isa = PBXBuildFile; productRef = 0B80B38929F10FE1003066FF /* MelonLyrics */; };
 		0B80B38C29F116F7003066FF /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B80B38B29F116F7003066FF /* LyricsView.swift */; };
+		0BCABC4829F7550600D4BB88 /* LyricsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0BCABC4729F7550600D4BB88 /* LyricsKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,9 +22,9 @@
 		0B80B37429F10A04003066FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B80B37729F10A04003066FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0B80B37929F10A04003066FF /* Lyricist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lyricist.entitlements; sourceTree = "<group>"; };
-		0B80B38429F10C4D003066FF /* MelonLyrics */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MelonLyrics; path = ../MelonLyrics; sourceTree = "<group>"; };
 		0B80B38B29F116F7003066FF /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
 		0BCABC4529F62ACF00D4BB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0BCABC4629F754DA00D4BB88 /* LyricsKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = LyricsKit; path = ../LyricsKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B80B38A29F10FE1003066FF /* MelonLyrics in Frameworks */,
+				0BCABC4829F7550600D4BB88 /* LyricsKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 		0B80B38129F10AF8003066FF /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				0B80B38429F10C4D003066FF /* MelonLyrics */,
+				0BCABC4629F754DA00D4BB88 /* LyricsKit */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -111,7 +111,7 @@
 			);
 			name = Lyricist;
 			packageProductDependencies = (
-				0B80B38929F10FE1003066FF /* MelonLyrics */,
+				0BCABC4729F7550600D4BB88 /* LyricsKit */,
 			);
 			productName = Lyricist;
 			productReference = 0B80B36D29F10A02003066FF /* Lyricist.app */;
@@ -375,9 +375,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0B80B38929F10FE1003066FF /* MelonLyrics */ = {
+		0BCABC4729F7550600D4BB88 /* LyricsKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = MelonLyrics;
+			productName = LyricsKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
