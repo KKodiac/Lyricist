@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "lyricskit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/KKodiac/LyricsKit.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "bcf8c9317e8ba90fa9d94c11e0b7b656c771f9df"
+      }
+    },
+    {
       "identity" : "swiftsoup",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/scinfu/SwiftSoup.git",

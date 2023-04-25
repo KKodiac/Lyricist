@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B01060C29F795A000B6C36E /* LyricsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0B01060B29F795A000B6C36E /* LyricsKit */; };
 		0B80B37129F10A02003066FF /* LyricistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B80B37029F10A02003066FF /* LyricistApp.swift */; };
 		0B80B37329F10A02003066FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B80B37229F10A02003066FF /* ContentView.swift */; };
 		0B80B37529F10A04003066FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B80B37429F10A04003066FF /* Assets.xcassets */; };
 		0B80B37829F10A04003066FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B80B37729F10A04003066FF /* Preview Assets.xcassets */; };
 		0B80B38C29F116F7003066FF /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B80B38B29F116F7003066FF /* LyricsView.swift */; };
-		0BCABC4829F7550600D4BB88 /* LyricsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0BCABC4729F7550600D4BB88 /* LyricsKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +24,6 @@
 		0B80B37929F10A04003066FF /* Lyricist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lyricist.entitlements; sourceTree = "<group>"; };
 		0B80B38B29F116F7003066FF /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
 		0BCABC4529F62ACF00D4BB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		0BCABC4629F754DA00D4BB88 /* LyricsKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = LyricsKit; path = ../LyricsKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BCABC4829F7550600D4BB88 /* LyricsKit in Frameworks */,
+				0B01060C29F795A000B6C36E /* LyricsKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,7 +41,6 @@
 		0B80B36429F10A02003066FF = {
 			isa = PBXGroup;
 			children = (
-				0B80B38129F10AF8003066FF /* Packages */,
 				0B80B36F29F10A02003066FF /* Lyricist */,
 				0B80B36E29F10A02003066FF /* Products */,
 				0B80B38829F10FE1003066FF /* Frameworks */,
@@ -79,14 +77,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		0B80B38129F10AF8003066FF /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				0BCABC4629F754DA00D4BB88 /* LyricsKit */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		0B80B38829F10FE1003066FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +101,7 @@
 			);
 			name = Lyricist;
 			packageProductDependencies = (
-				0BCABC4729F7550600D4BB88 /* LyricsKit */,
+				0B01060B29F795A000B6C36E /* LyricsKit */,
 			);
 			productName = Lyricist;
 			productReference = 0B80B36D29F10A02003066FF /* Lyricist.app */;
@@ -141,6 +131,9 @@
 				Base,
 			);
 			mainGroup = 0B80B36429F10A02003066FF;
+			packageReferences = (
+				0B01060829F7952D00B6C36E /* XCRemoteSwiftPackageReference "LyricsKit" */,
+			);
 			productRefGroup = 0B80B36E29F10A02003066FF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -380,9 +373,21 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		0B01060829F7952D00B6C36E /* XCRemoteSwiftPackageReference "LyricsKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/KKodiac/LyricsKit.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		0BCABC4729F7550600D4BB88 /* LyricsKit */ = {
+		0B01060B29F795A000B6C36E /* LyricsKit */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 0B01060829F7952D00B6C36E /* XCRemoteSwiftPackageReference "LyricsKit" */;
 			productName = LyricsKit;
 		};
 /* End XCSwiftPackageProductDependency section */
