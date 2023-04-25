@@ -11,7 +11,7 @@ import MelonLyrics
 struct LyricsView: View {
     @StateObject private var service = MelonLyrics()
     @State var artist: String?
-    @State var title: String?
+    @State var title: String? 
     
     var body: some View {
         VStack {
@@ -23,24 +23,21 @@ struct LyricsView: View {
                 Text(artist ?? "Artist").font(.caption)
             }
             Divider()
-            ScrollView {
-                Text(service.lyrics)
+            List($service.lyrics, id: \.self) { lyric in
+                Text(lyric.wrappedValue)
             }
         }
         .padding([.top, .leading, .trailing])
     }
     
     // MARK: Receiving title and artist information of current music
-    public func currentlyPlaying() {
-        // Load framework
+    private func currentlyPlaying() {
         let bundle = CFBundleCreate(kCFAllocatorDefault, NSURL(fileURLWithPath: "/System/Library/PrivateFrameworks/MediaRemote.framework"))
         
-        // Get a Swift function for MRMediaRemoteGetNowPlayingInfo
         guard let MRMediaRemoteGetNowPlayingInfoPointer = CFBundleGetFunctionPointerForName(bundle, "MRMediaRemoteGetNowPlayingInfo" as CFString) else { return }
         typealias MRMediaRemoteGetNowPlayingInfoFunction = @convention(c) (DispatchQueue, @escaping ([String: Any]) -> Void) -> Void
         let MRMediaRemoteGetNowPlayingInfo = unsafeBitCast(MRMediaRemoteGetNowPlayingInfoPointer, to: MRMediaRemoteGetNowPlayingInfoFunction.self)
         
-        // Get a Swift function for MRNowPlayingClientGetBundleIdentifier
         guard let MRNowPlayingClientGetBundleIdentifierPointer = CFBundleGetFunctionPointerForName(bundle, "MRNowPlayingClientGetBundleIdentifier" as CFString) else { return }
         typealias MRNowPlayingClientGetBundleIdentifierFunction = @convention(c) (AnyObject?) -> String
         _ = unsafeBitCast(MRNowPlayingClientGetBundleIdentifierPointer, to: MRNowPlayingClientGetBundleIdentifierFunction.self)
@@ -53,9 +50,7 @@ struct LyricsView: View {
             let artwork = NSImage(data: information["kMRMediaRemoteNowPlayingInfoArtworkData"] as! Data)
             self.artist = information["kMRMediaRemoteNowPlayingInfoArtist"] as? String
             self.title = information["kMRMediaRemoteNowPlayingInfoTitle"] as? String
-            print("CHANGED")
             service.fetch(title: title ?? "", artist: artist ?? "")
-            print(service.lyrics)
         })
     }
 }

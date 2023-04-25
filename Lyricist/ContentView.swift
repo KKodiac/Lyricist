@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         LyricsView()
+            .frame(minHeight: 200)
     }
     
     
