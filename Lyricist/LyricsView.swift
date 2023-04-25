@@ -15,19 +15,51 @@ struct LyricsView: View {
     
     var body: some View {
         VStack {
-            Button("Request Lyrics") {
-                currentlyPlaying()
-            }
-            VStack {
-                Text(title ?? "Title").font(.headline)
-                Text(artist ?? "Artist").font(.caption)
-            }
-            Divider()
-            List($service.lyrics, id: \.self) { lyric in
-                Text(lyric.wrappedValue)
-            }
+            Text(title ?? "Title").font(.headline)
+            Text(artist ?? "Artist").font(.caption)
         }
-        .padding([.top, .leading, .trailing])
+        .padding(.top)
+        Divider()
+        List($service.lyrics, id: \.self) { lyric in
+            Text(lyric.wrappedValue)
+        }
+        
+        Divider()
+        
+        HStack {
+            Button(action: {
+                currentlyPlaying()
+            }, label: {
+                Text("Request")
+                HStack {
+                    Image(systemName: "command")
+                    Text("+")
+                    Image(systemName: "r.square")
+                }
+                .font(.caption)
+            })
+            .keyboardShortcut("r")
+            .frame(minWidth: 100)
+            
+            Divider().frame(height: 20)
+            
+            Button(action: {
+                NSApplication.shared.terminate(nil)
+            }, label: {
+                Text("Quit")
+                HStack {
+                    Image(systemName: "command")
+                    Text("+")
+                    Image(systemName: "q.square")
+                }
+                .font(.caption)
+            })
+            .keyboardShortcut("q")
+            .frame(minWidth: 100)
+        }
+        .font(.headline)
+        .buttonStyle(.plain)
+        .padding(.bottom)
     }
     
     // MARK: Receiving title and artist information of current music
